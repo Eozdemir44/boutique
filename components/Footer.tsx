@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from 'next/image'
 
 const footerLinks = {
   "Boutique": [
@@ -27,8 +28,6 @@ const footerLinks = {
     { label: "Politique de retour", href: "/retours" },
   ],
 };
-
-const paymentIcons = ["Visa", "MC", "AmEx", "PayPal", "Klarna", "Apple Pay"];
 
 export default function Footer() {
   return (
@@ -65,7 +64,7 @@ export default function Footer() {
                     </svg>
                   ),
                   label: "Instagram",
-                  href: "#",
+                  href: "https://www.instagram.com/alisshinejewels/",
                 },
                 {
                   icon: () => (
@@ -74,7 +73,7 @@ export default function Footer() {
                     </svg>
                   ),
                   label: "TikTok",
-                  href: "#",
+                  href: "https://www.tiktok.com/@alisshinejewels",
                 },
                 {
                   icon: () => (
@@ -83,7 +82,7 @@ export default function Footer() {
                     </svg>
                   ),
                   label: "Pinterest",
-                  href: "#",
+                  href: "https://fr.pinterest.com/alisshinejewels/_created/",
                 },
               ].map(({ icon: Icon, label, href }) => (
                 <a
@@ -124,21 +123,22 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs text-center md:text-left">
+          <p className="text-white/40 text-s text-center md:text-left">
             © {new Date().getFullYear()} Alis Shine Jewels. Tous droits réservés.
           </p>
 
-          {/* Payment methods */}
-          <div className="flex flex-wrap items-center gap-2">
-            {paymentIcons.map((p) => (
-              <span
-                key={p}
-                className="bg-white/10 text-white/60 text-[10px] font-semibold px-2.5 py-1 rounded tracking-wide border border-white/10"
-              >
-                {p}
-              </span>
-            ))}
-          </div>
+         {/* methode de paiement */}
+<div className="flex items-center gap-3 flex-wrap">
+  <span className="text-s text-gray-500">Paiement sécurisé :</span>
+  <Image src="/icons/visa.svg" alt="Visa" width={45} height={30} />
+  <Image src="/icons/mastercard.svg" alt="Mastercard" width={45} height={30} />
+  <Image src="/icons/amex.svg" alt="Amex" width={45} height={30} />
+  <Image src="/icons/paypal.svg" alt="PayPal" width={45} height={30} />
+  <Image src="/icons/klarna.svg" alt="Klarna" width={45} height={30} />
+  <Image src="/icons/apple-pay.svg" alt="Apple Pay" width={45} height={30} />
+  <Image src="/icons/google-pay.svg" alt="Google Pay" width={45} height={30} />
+</div>
+      
         </div>
       </div>
     </footer>
