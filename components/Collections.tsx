@@ -43,7 +43,7 @@ export default function Collections() {
               />
 
               {/* Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a3428]/90 via-[#0a3428]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t, from-[#0a3428]/90 via-[#0a3428]/30 to-transparent" />
 
               {/* Theme badge */}
               <div className="absolute top-4 left-4 bg-[#d7b152]/90 text-[#0a3428] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full backdrop-blur-sm">

@@ -52,7 +52,7 @@ export default function Footer() {
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
               Chaque bijou est une invitation à rayonner. Des créations uniques, pour des femmes
-              qui savent ce qu&apos;elles valent.
+              qui savent ce qu'elles valent.
             </p>
 
             {/* Social */}
@@ -125,7 +125,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-xs text-center md:text-left">
-            © {new Date().getFullYear()} Alis Shine Jewels. Tous droits réservés. Fait avec ✨ et passion.
+            © {new Date().getFullYear()} Alis Shine Jewels. Tous droits réservés.
           </p>
 
           {/* Payment methods */}

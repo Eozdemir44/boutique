@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Product } from "@/lib/data";
 import { Save, X, ImageIcon, Plus } from "lucide-react";
 
-const CATEGORIES = ["collier", "bracelet", "boucles", "bague"];
+const CATEGORIES = ["collier", "bracelet", "boucles", "bague", "montre"];
 const COLLECTIONS = ["Noctura", "Time to Shine", "La Perla"];
 const BADGES = ["", "Nouveau", "Bestseller", "Édition limitée", "Promo"];
 

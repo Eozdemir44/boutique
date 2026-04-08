@@ -18,7 +18,7 @@ export default function PromoBar() {
   return (
     <div className="bg-[#0a3428] text-white text-xs tracking-wider py-2.5 px-4 relative overflow-hidden">
       {/* animated shimmer line */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-[shimmerSlide_3s_linear_infinite]" />
+      <div className="absolute inset-0 bg-gradient-to-r, from-transparent via-white/5 to-transparent animate-[shimmerSlide_3s_linear_infinite]" />
 
       <div className="flex items-center justify-center gap-4">
         {/* arrows */}
@@ -29,7 +29,7 @@ export default function PromoBar() {
           ‹
         </button>
 
-        <span className="font-[var(--font-assistant)] text-center select-none">
+        <span className="font-[var(--font-assistant)], text-center select-none">
           {promos[index]}
         </span>
 

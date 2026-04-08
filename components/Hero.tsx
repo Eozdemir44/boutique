@@ -14,7 +14,7 @@ export default function Hero() {
           style={{ filter: "brightness(0.45)" }}
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a3428]/60 via-black/30 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b, from-[#0a3428]/60 via-black/30 to-black/70" />
         {/* Pattern */}
         <div className="absolute inset-0 pattern-bg opacity-20" />
       </div>
@@ -34,7 +34,7 @@ export default function Hero() {
 
         {/* Main headline */}
         <h1
-          className="font-[var(--font-arapey)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none mb-6 fade-up"
+          className="font-[var(--font-arapey)], text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none mb-6 fade-up"
           style={{ fontFamily: "var(--font-arapey), Georgia, serif" }}
         >
           Bienvenue dans{" "}
@@ -90,7 +90,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs tracking-widest">
         <span>SCROLL</span>
-        <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent" />
+        <div className="w-px h-10 bg-gradient-to-b, from-white/40 to-transparent" />
       </div>
     </section>
   );

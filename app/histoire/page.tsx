@@ -11,14 +11,14 @@ export default function Histoire() {
       <Navbar />
       <main className="bg-white">
         {/* Hero */}
-        <div className="relative h-80 md:h-[28rem] bg-[#0a3428] flex items-center justify-center overflow-hidden mt-16">
+        <div className="relative h-80 md:h-[28rem], bg-[#0a3428] flex items-center justify-center overflow-hidden mt-16">
           <div className="absolute inset-0 pattern-bg opacity-25" />
           <img
             src="https://images.unsplash.com/photo-1599459183200-59c7687a0c70?w=1400&q=80"
             alt="Notre histoire"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a3428]/60 to-[#0a3428]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b, from-[#0a3428]/60 to-[#0a3428]/90" />
           <div className="relative z-10 text-center text-white px-4 max-w-3xl">
             <p className="text-[#d7b152] text-xs tracking-[4px] uppercase font-bold mb-3">Notre Histoire</p>
             <h1
