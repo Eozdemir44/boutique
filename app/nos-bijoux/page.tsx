@@ -1,12 +1,12 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import PromoBar from "@/components/PromoBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
-import { products, collections } from "@/lib/data";
-import { SlidersHorizontal, ChevronDown, X } from "lucide-react";
+import { Product, collections } from "@/lib/data";
+import { ChevronDown, X } from "lucide-react";
 import { Suspense } from "react";
 
 const categories = [
@@ -29,13 +29,20 @@ function ProductsContent() {
   const initialCat = searchParams.get("cat") || "";
   const initialCol = searchParams.get("collection") || "";
 
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const [loadingProducts, setLoadingProducts] = useState(true);
   const [activeCategory, setActiveCategory] = useState(initialCat);
   const [activeCollection, setActiveCollection] = useState(initialCol);
   const [sort, setSort] = useState("default");
-  const [filtersOpen, setFiltersOpen] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/products")
+      .then((r) => r.json())
+      .then((data) => { setAllProducts(data); setLoadingProducts(false); });
+  }, []);
 
   const filtered = useMemo(() => {
-    let list = [...products];
+    let list = [...allProducts];
     if (activeCategory) list = list.filter((p) => p.category === activeCategory);
     if (activeCollection)
       list = list.filter((p) =>
@@ -45,7 +52,7 @@ function ProductsContent() {
     if (sort === "price-desc") list.sort((a, b) => b.price - a.price);
     if (sort === "promo") list = list.filter((p) => p.badge === "Promo");
     return list;
-  }, [activeCategory, activeCollection, sort]);
+  }, [allProducts, activeCategory, activeCollection, sort]);
 
   const clearFilters = () => {
     setActiveCategory("");
@@ -152,7 +159,11 @@ function ProductsContent() {
           </p>
 
           {/* Products grid */}
-          {filtered.length > 0 ? (
+          {loadingProducts ? (
+            <div className="flex items-center justify-center py-24">
+              <div className="w-8 h-8 border-2 border-[#d7b152] border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filtered.map((product) => (
                 <ProductCard key={product.id} product={product} />
